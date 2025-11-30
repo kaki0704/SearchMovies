@@ -1,11 +1,35 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
+import { FormsModule } from "@angular/forms";
 
 @Component({
     selector: "app-header",
-    templateUrl: "./header.component.html",
-    styleUrls: ["./header.component.css"],
-    standalone: false
+    template: `
+<div class="alert alert-primary">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h3 class="app-clickable" [routerLink]="['/home']">Movie Search</h3>
+      </div>
+      <div class="col-md-8">
+        <form (submit)="submitHandler($event)">
+          <input
+            type="text"
+            name="queryTerm"
+            autofocus
+            [(ngModel)]="queryTerm"
+            placeholder="search movies"
+            class="form-control"
+          />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+    `,
+    styles: [],
+    standalone: true,
+    imports: [RouterLink, FormsModule]
 })
 export class HeaderComponent implements OnInit {
   queryTerm: string;
