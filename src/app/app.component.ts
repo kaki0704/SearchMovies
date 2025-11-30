@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './components/header/header.component';
+import { Component } from "@angular/core";
+import { RouterOutlet } from "@angular/router";
+import { HeaderComponent } from "./components/header/header.component";
 
 @Component({
-    selector: 'app-root',
-    template: `
+	selector: "app-root",
+	template: `
 <app-header></app-header>
 <div class="container">
   <!-- <app-home></app-home> -->
@@ -12,10 +12,10 @@ import { HeaderComponent } from './components/header/header.component';
   <router-outlet></router-outlet>
 </div>
     `,
-    styles: [],
-    standalone: true,
-    imports: [RouterOutlet, HeaderComponent]
+	styles: [],
+	standalone: true,
+	imports: [RouterOutlet, HeaderComponent],
 })
 export class AppComponent {
-  title = 'movie-search';
+	title = "movie-search";
 }

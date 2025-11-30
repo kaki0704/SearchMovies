@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, type OnInit } from "@angular/core";
 
 @Component({
-    selector: 'app-home',
-    template: `
+	selector: "app-home",
+	template: `
 <div class="row">
   <div class="col-md-4" col-xs-12 col-sm-12></div>
   <div class="col-md-4">
@@ -12,14 +12,9 @@ import { Component, OnInit } from '@angular/core';
   <div class="col-md-4"></div>
 </div>
     `,
-    styles: [],
-    standalone: true
+	styles: [],
+	standalone: true,
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+	ngOnInit() {}
 }

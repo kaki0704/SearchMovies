@@ -1,10 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { MoviesService } from "../../services/movies.service";
 import { ActivatedRoute } from "@angular/router";
+import { MoviesService } from "../../services/movies.service";
 
 @Component({
-    selector: "app-movie-details",
-    template: `
+	selector: "app-movie-details",
+	template: `
 @if (!movie) {
   <div class="text-center text-warning">
     <img src="/assets/images/loading.gif" alt="loading">
@@ -55,25 +55,25 @@ import { ActivatedRoute } from "@angular/router";
   </div>
 }
     `,
-    styles: [],
-    standalone: false
+	styles: [],
+	standalone: false,
 })
 export class MovieDetailsComponent implements OnInit {
-  movie: any;
+	movie: any;
 
-  constructor(
-    private service: MoviesService,
-    private activatedRoute: ActivatedRoute
-  ) {}
+	constructor(
+		private service: MoviesService,
+		private activatedRoute: ActivatedRoute,
+	) {}
 
-  ngOnInit(): void {
-    this.activatedRoute.params.subscribe(params => {
-      let id = params["imdbID"];
-      this.service.getMovieDetails(id).subscribe(resp => (this.movie = resp));
-    });
-  }
+	ngOnInit(): void {
+		this.activatedRoute.params.subscribe((params) => {
+			const id = params.imdbID;
+			this.service.getMovieDetails(id).subscribe((resp) => (this.movie = resp));
+		});
+	}
 
-  goBack() {
-    window.history.back();
-  }
+	goBack() {
+		window.history.back();
+	}
 }

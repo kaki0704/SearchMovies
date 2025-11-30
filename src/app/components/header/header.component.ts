@@ -1,10 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { Router, RouterLink } from "@angular/router";
 import { FormsModule } from "@angular/forms";
+import { Router, RouterLink } from "@angular/router";
 
 @Component({
-    selector: "app-header",
-    template: `
+	selector: "app-header",
+	template: `
 <div class="alert alert-primary">
   <div class="container">
     <div class="row">
@@ -27,19 +27,19 @@ import { FormsModule } from "@angular/forms";
   </div>
 </div>
     `,
-    styles: [],
-    standalone: true,
-    imports: [RouterLink, FormsModule]
+	styles: [],
+	standalone: true,
+	imports: [RouterLink, FormsModule],
 })
 export class HeaderComponent implements OnInit {
-  queryTerm: string;
+	queryTerm: string;
 
-  constructor(private router: Router) {}
+	constructor(private router: Router) {}
 
-  ngOnInit() {}
+	ngOnInit() {}
 
-  submitHandler(evt) {
-    evt.preventDefault();
-    this.router.navigate(["/movies"], { queryParams: { q: this.queryTerm } });
-  }
+	submitHandler(evt) {
+		evt.preventDefault();
+		this.router.navigate(["/movies"], { queryParams: { q: this.queryTerm } });
+	}
 }

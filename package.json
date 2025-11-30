@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "test:coverage": "ng test --coverage",
-    "lint": "ng lint",
+    "lint": "biome check",
+    "lint:fix": "biome check --write",
+    "format": "biome format --write",
     "e2e": "ng e2e"
   },
   "private": true,
@@ -31,6 +33,7 @@
     "@angular/cli": "^21.0.1",
     "@angular/compiler-cli": "^21.0.1",
     "@angular/language-service": "^21.0.1",
+    "@biomejs/biome": "^2.3.8",
     "@types/node": "^24.10.1",
     "@vitest/ui": "^4.0.14",
     "codelyzer": "^6.0.0",

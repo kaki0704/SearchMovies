@@ -1,10 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { MoviesService } from "../../services/movies.service";
 import { ActivatedRoute, RouterLink } from "@angular/router";
+import { MoviesService } from "../../services/movies.service";
 
 @Component({
-    selector: "app-movie-list",
-    template: `
+	selector: "app-movie-list",
+	template: `
 <div class="row">
   @for (m of movies; track m) {
     <div class="card col-md-4 col-sm-6 col-xs-12">
@@ -20,24 +20,24 @@ import { ActivatedRoute, RouterLink } from "@angular/router";
   }
 </div>
     `,
-    styles: [],
-    standalone: true,
-    imports: [RouterLink]
+	styles: [],
+	standalone: true,
+	imports: [RouterLink],
 })
 export class MovieListComponent implements OnInit {
-  movies: any[];
+	movies: any[];
 
-  constructor(
-    private service: MoviesService,
-    private activatedRoute: ActivatedRoute
-  ) {}
+	constructor(
+		private service: MoviesService,
+		private activatedRoute: ActivatedRoute,
+	) {}
 
-  ngOnInit() {
-    this.activatedRoute.queryParams.subscribe(qparams => {
-      let q = qparams["q"];
-      this.service
-        .searchMovies(q)
-        .subscribe(resp => (this.movies = resp.Search));
-    });
-  }
+	ngOnInit() {
+		this.activatedRoute.queryParams.subscribe((qparams) => {
+			const q = qparams.q;
+			this.service
+				.searchMovies(q)
+				.subscribe((resp) => (this.movies = resp.Search));
+		});
+	}
 }
