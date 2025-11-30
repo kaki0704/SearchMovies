@@ -3,9 +3,10 @@ import { MoviesService } from "src/app/services/movies.service";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
-  selector: "app-movie-details",
-  templateUrl: "./movie-details.component.html",
-  styleUrls: ["./movie-details.component.css"]
+    selector: "app-movie-details",
+    templateUrl: "./movie-details.component.html",
+    styleUrls: ["./movie-details.component.css"],
+    standalone: false
 })
 export class MovieDetailsComponent implements OnInit {
   movie: any;
